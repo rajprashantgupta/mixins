@@ -1,0 +1,217 @@
+.boxShadow(@arguments) {
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    box-shadow: @arguments;
+}
+
+.opacity(@value: 0.5) {
+    -webkit-opacity: @value;
+    -moz-opacity: @value;
+    -ms-opacity: @value;
+    opacity: @value;
+}
+
+.transform(@arguments) {
+    -webkit-transform: @arguments;
+    -moz-transform: @arguments;
+    -ms-transform: @arguments;
+    -o-transform: @arguments;
+    transform: @arguments;
+}
+
+.transition(@arguments) {
+    -webkit-transition: @arguments;
+    -moz-transition: @arguments;
+    -ms-transition: @arguments;
+    -o-transition: @arguments;
+    transition: @arguments;
+}
+
+.animation(@arguments) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    -o-animation: @arguments;
+    animation: @arguments;
+}
+
+.border(@arguments) {
+    -webkit-border: @arguments;
+    -moz-border: @arguments;
+    -ms-border: @arguments;
+    border: @arguments;
+}
+
+.borderTop(@arguments) {
+    -webkit-border-top: @arguments;
+    -moz-border-top: @arguments;
+    -ms-border-top: @arguments;
+    border-top: @arguments;
+}
+
+.borderBottom(@arguments) {
+    -webkit-border-bottom: @arguments;
+    -moz-border-bottom: @arguments;
+    -ms-border-bottom: @arguments;
+    border-bottom: @arguments;
+}
+
+.borderLeft(@arguments) {
+    -webkit-border-left: @arguments;
+    -moz-border-left: @arguments;
+    -ms-border-left: @arguments;
+    border-left: @arguments;
+}
+
+.borderRight(@arguments) {
+    -webkit-border-right: @arguments;
+    -moz-border-right: @arguments;
+    -ms-border-right: @arguments;
+    border-right: @arguments;
+}
+
+.borderRadius(@value) {
+    -webkit-border-radius: @value;
+    -moz-border-radius: @value;
+    -ms-border-radius: @value;
+    border-radius: @value;
+}
+
+.customItemCenter(@top: 50%,
+    @left: 50%,
+    @moveLeft: -50%,
+    @moveTop: -50%) {
+    position: absolute;
+    top: @top;
+    left: @left;
+    .transform(translate(@moveTop, @moveLeft));
+}
+
+.grid(@value) when (@value =true) {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}
+
+.grid(@value) when not (@value =true) {
+    display: block;
+}
+
+.flexBox {
+    .grid(true);
+}
+
+// row (default) | row-reverse | column | column-reverse
+.flexDirection(@direction) when (@direction=row-reverse) {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: reverse;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+}
+
+.flexDirection(@direction) when (@direction=column) {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+}
+
+.flexDirection(@direction) when (@direction=column-reverse) {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: reverse;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+}
+
+.flexDirection(@direction) when (@direction=row) {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -webkit-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+}
+
+// flex-start | flex-end | center | space-between | space-around
+.justifyContent(@value) when (@value=flex-start) {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: @value;
+    justify-content: @value;
+}
+
+.justifyContent(@value) when (@value=flex-end) {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: @value;
+    justify-content: @value;
+}
+
+.justifyContent(@value) when (@value=space-between) {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: @value;
+    justify-content: @value;
+}
+
+.justifyContent(@value) when (@value=space-around) {
+    -webkit-box-pack: distribute;
+    -moz-box-pack: distribute;
+    -ms-flex-pack: distribute;
+    -webkit-justify-content: @value;
+    justify-content: @value;
+}
+
+.justifyContent(@value) when (@value=center) {
+    -webkit-box-pack: @value;
+    -moz-box-pack: @value;
+    -ms-flex-pack: @value;
+    -webkit-justify-content: @value;
+    justify-content: @value;
+}
+
+
+// flex-start | flex-end | center | baseline | stretch
+.alignItems(@value) when(@value =stretch) {
+    -webkit-box-align: @value;
+    -moz-box-align: @value;
+    -ms-flex-align: @value;
+    -webkit-align-items: @value;
+    align-items: @value;
+}
+
+.alignItems(@value) when(@value =flex-start) {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: @value;
+    align-items: @value;
+}
+
+.alignItems(@value) when(@value =flex-end) {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: @value;
+    align-items: @value;
+}
+
+.flexBoxCenter {
+    .flexBox();
+    .justifyContent(center);
+    .alignItems(center);
+}
